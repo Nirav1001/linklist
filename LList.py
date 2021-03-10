@@ -142,7 +142,16 @@ class LList(object):
             :return The pair (True, value) if self is not empty
             :return The pair (False, None) if self is empty
         """
-        pass
+         if self.is_empty():
+            return False, None
+        else:
+            self._size -= 1
+            self._temp = self._head
+            if self._size == 0:
+                self._tail = self._head = None
+            else:
+                self._head = self._head.next
+            return True, self._temp.data
 
     def remove_from_back(self):
         """
