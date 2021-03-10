@@ -164,7 +164,21 @@ class LList(object):
             :return The pair True, value if self is not empty
             :return The pair False, None if self is empty
         """
-        pass
+         if self.is_empty():
+            return False, None
+        else:
+            self._size -= 1
+            self._temp = self._head
+            if self._size == 0:
+                self._head = self._tail = None
+            else:
+                self._prev = self._head
+                while self._temp != self._tail:
+                    self._prev = self._temp
+                    self._temp = self._temp.next
+                self._tail = self._prev
+                self._tail.next = None
+            return True, self._temp.data
 
     def retrieve_data(self, idx):
         """
