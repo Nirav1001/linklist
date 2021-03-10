@@ -80,7 +80,13 @@ class LList(object):
         Return:
             :return None
         """
-        pass
+        
+        self._size += 1
+        if self.is_empty():
+            self._head = node(val)
+            self._tail = self._head
+        else:
+            self._head = node(val, self._head)
 
     def append(self, val):
         """
