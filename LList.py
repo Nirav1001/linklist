@@ -214,5 +214,9 @@ class LList(object):
         Return:
             :return True if the index was valid, False otherwise
         """
-        pass
+        if self.retrieve_data(idx)[0]:
+            self._temp.data = val
+            return True
+        else:
+            return False
 
