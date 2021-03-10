@@ -121,7 +121,15 @@ class LList(object):
             :return True, idx if the val appears in self
             :return False, None if the vale does not appear in self
         """
-        pass
+        self._temp = self._head
+        self._counter = 0
+        while self._temp is not None:
+            if self._temp.data == val:
+                return True, self._counter
+            else:
+                self._temp = self._temp.next
+                self._counter += 1
+        return False, None
 
     def remove_from_front(self):
         """
