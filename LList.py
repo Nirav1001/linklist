@@ -44,7 +44,10 @@ class LList(object):
         """
         self._size = 0  # how many elements in the stack
         self._head = None  # the node chain starts here; initially empty
-        self._tail = None
+        self._tail = None   # the node chain ends here; initially empty
+        self._temp = None   # temperory node chain to traverse a linklist; initially empty
+        self._counter = 0   # counter
+        self._prev = None
 
     def is_empty(self):
         """
@@ -53,7 +56,7 @@ class LList(object):
         Return:
             :return True if the list has no data, or False otherwise
         """
-        return None
+        return self._head is None
 
     def size(self):
         """
