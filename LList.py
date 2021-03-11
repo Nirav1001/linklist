@@ -100,7 +100,7 @@ class LList(object):
         Return:
             :return None
         """
-         self._size += 1
+        self._size += 1
         if self.is_empty():
             self._head = node(val)
             self._tail = self._head
@@ -142,7 +142,7 @@ class LList(object):
             :return The pair (True, value) if self is not empty
             :return The pair (False, None) if self is empty
         """
-         if self.is_empty():
+        if self.is_empty():
             return False, None
         else:
             self._size -= 1
@@ -164,7 +164,7 @@ class LList(object):
             :return The pair True, value if self is not empty
             :return The pair False, None if self is empty
         """
-         if self.is_empty():
+        if self.is_empty():
             return False, None
         else:
             self._size -= 1
